@@ -1,0 +1,3 @@
+{
+  "extends": ["github>PicturePipe/renovate-config"]
+}
