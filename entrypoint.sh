@@ -6,4 +6,8 @@
 # the host's git-config, which is not necessarily the location where the
 # wrapper script is installed.
 #
-exec -a "git-crypt" /usr/bin/git-crypt "$@"
+
+PATH="$PATH:/usr/bin"
+export PATH
+
+exec git-crypt "$@"
