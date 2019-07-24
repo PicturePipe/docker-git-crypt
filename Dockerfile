@@ -23,7 +23,8 @@ RUN apk --update --no-cache add \
     git \
     gnupg \
     libgcc \
-    libstdc++
+    libstdc++ \
+    openssh-client
 
 COPY --from=builder /usr/bin/git-crypt /usr/bin/git-crypt
 
