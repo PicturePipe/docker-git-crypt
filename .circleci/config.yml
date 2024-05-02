@@ -68,13 +68,19 @@ workflows:
           <<: *docker-publish-args
           <<: *filter-only-develop
           tag: edge
+          context:
+            - quay-push
       - docker-publish/publish:
           name: docker-build-and-publish-master
           <<: *docker-publish-args
           <<: *filter-only-master
           tag: latest
+          context:
+            - quay-push
       - docker-publish/publish:
           name: docker-build-and-publish-release
           <<: *docker-publish-args
           <<: *filter-only-tagged
           tag: $CIRCLE_TAG
+          context:
+            - quay-push
